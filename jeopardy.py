@@ -2,7 +2,7 @@ categories = ["Shakespeare", "Movies", "History", "Sports", "Computer Science"]
 
 Shakespeare = ["Shakespeare heavily relied on this theatre company to produce his plays.", "It wasn't true love that killed Romeo, it was this.", "This character is famously known as a foil to Macbeth.", "In King Lear, Gloucester loses one of his senses when this is cut off.", "This character delivered Shakespeare's famous To Be or Not to Be Speech."]
 
-Movies = ["What year was the Dark Knight released?", "In this 1980 horror movie, a family is isolated in an eerie hotel with a sinister past.","This 1999 film features a group of misfits who band together to fight against a corrupt system in a dystopian future.","In this animated film, a young lion named Simba learns to embrace his identity and take his place in the circle of life.","This 2001 film follows a hobbit named Frodo as he embarks on a quest to destroy a powerful ring."]
+Movies = ["This actor plays Batman in 2008s The Dark Knight", "In this 1980 horror movie, a family is isolated in an eerie hotel with a sinister past.","This 1999 film features a group of misfits who band together to fight against a corrupt system in a dystopian future.","In this animated film, a young lion named Simba learns to embrace his identity and take his place in the circle of life.","This popular film franchise follows a hobbit named Frodo as he embarks on a quest to destroy a powerful ring."]
 
 History = ["This ancient civilization is known for its pyramids and pharaohs, located along the Nile River.","In 1776, this document was signed, declaring the thirteen American colonies' independence from British rule.","This conflict, known for its trench warfare and the introduction of tanks, lasted from 1914 to 1918.","This famous speech by Martin Luther King Jr. was delivered during the March on Washington in 1963.","This empire, which spanned three continents at its height, was ruled by Suleiman the Magnificent in the 16th century."]
 
@@ -26,6 +26,8 @@ def one_turn(score):
     select = str(input("Select a category: "))
     if select.upper() == "SHAKESPEARE":
         Shakespeare_questions(score)
+    if select.upper() == "MOVIES":
+        Movies_questions(score)
 
 
 def Shakespeare_questions(score):
@@ -79,6 +81,59 @@ def Shakespeare_questions(score):
         else:
             score += 100
             print("Wrong! Total score =",score)
+            return score
+
+def Movies_questions(score):
+    pvs = str(input("Select your point value. 100, 200, 300, 400, 500: "))
+    if pvs == "500":
+        print(Movies[0])
+        a1 = str(input("Answer: "))
+        if a1.upper() == "CHRISTIAN BALE":
+            score += 500
+            print("Correct! Total score =",score,)
+        else:
+            score -= 500
+            print("Wrong! Total score =",score,"Correct answer was Christian Bale.")
+            return score
+    if pvs == "400":
+        print(Movies[2])
+        a2 = str(input("Answer: "))
+        if a2.upper() == "MATRIX" or a2.upper() == "THE MATRIX":
+            score += 400
+            print("Correct! Total score =", score)
+        else:
+            score -= 400
+            print("Wrong! Total score =",score,"Correct Answer is The Matrix.")
+            return score
+    if pvs == "300":
+        print(Movies[1])
+        a3 = str(input("Answer: "))
+        if a3.upper() == "THE SHINING" or a3.upper() == "SHINING":
+            score += 300
+            print("Correct! Total score =",score)
+        else:
+            score -= 300
+            print("Wrong! Total score =",score,"Correct answer is The Shining.")
+            return score
+    if pvs == "200":
+        print(Movies[3])
+        a4 = str(input("Answer: "))
+        if a4.upper() == "THE LION KING" or a4.upper() == "LION KING":
+            score += 200
+            print("Correct! Total score =",score)
+        else:
+            score -= 200
+            print("Wrong! Total score =",score,"Correct answer is The Lion King.")
+            return score
+    if pvs == "100":
+        print(Movies[1])
+        a5 = str(input("Answer: "))
+        if a5.upper() == "LORD OF THE RINGS" or "THE LORD OF THE RINGS":
+            score += 100
+            print("Correct! Total score =",score)
+        else:
+            score += 100
+            print("Wrong! Total score =",score,"Correct answer is The Lord of The Rings")
             return score
  
         
